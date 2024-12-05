@@ -1,38 +1,27 @@
+import { Terminal } from 'primereact/terminal';
+import { Header } from './components/Header/Header';
+import { TitleBar } from './components/TitleBar/TitleBar';
+import { AVAILABLE_COMMANDS } from './constants/commands';
+import useCommandLine from './hooks/useCommandLine';
 
-import {Terminal} from 'primereact/terminal';
+import '../../Components/CommandLine/styles/CommandLine.css';
 
-import './CommandLine.css';
-import useCommandLine from './useCommandLine';
 function CommandLine() {
-   useCommandLine();
-     return (
-         <div style={{
-             height: '100%',
-             display:'grid',
-             position:'relative'
-         }}>
-             <div style={{
-                 padding: 10,
-                 borderRadius: 5,
-                 color: 'lime',
-                 overflow: 'auto',
-                 flexGrow: 1,
-                 background: 'rgba(255, 255, 255, 0.1)',
-                 boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-                 backdropFilter: 'blur(4px)',
-                 border: '1px solid rgba(255, 255, 255, 0.18)',
-             }}>
-                 <p style={{color: 'lime'}}>Enter "<strong>date</strong>" to display the current date, "<strong>joke</strong>"
-                     to get a random Dad joke, and "<strong>clear</strong>" to clear all commands.</p>
-                 <Terminal
-                     welcomeMessage="Welcome to The Terminal!"
-                     prompt="user $"
-
-                 />
-             </div>
-         </div>
-     );
+    useCommandLine();
+    
+    return (
+        <div className="terminal-window">
+            <TitleBar title="terminal@user: ~" />
+            <Header 
+                title="Welcome to the Enhanced Terminal v2.0"
+                commands={AVAILABLE_COMMANDS}
+            />
+            <Terminal
+                welcomeMessage="🖥️ System initialized. Type 'help' for commands. Ready when you are..."
+                prompt="λ "
+            />
+        </div>
+    );
 }
-
 
 export default CommandLine;

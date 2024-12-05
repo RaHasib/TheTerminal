@@ -1,0 +1,30 @@
+.terminal-controls::before {
+    content: '⚪ ⚪ ⚪';
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.terminal-title {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    right: 0;
+    font-family: 'Fira Code', monospace;
+}
+
+@media (max-width: 480px) {
+    .terminal-controls::before {
+        font-size: 10px;
+    }
+
+    .terminal-title {
+        font-size: 12px;
+    }
+} 

@@ -1,0 +1,96 @@
+.terminal-window {
+    width: 100%;
+    height: 100vh;
+    padding: 25px;
+    color: #00ff00;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 8px 32px 0 rgba(0, 255, 0, 0.1),
+                0 0 0 1px rgba(0, 255, 0, 0.1);
+    backdrop-filter: blur(12px);
+    position: relative;
+}
+
+.p-terminal {
+    height: calc(100vh - 200px);
+    max-height: 100%;
+    min-height: 300px;
+    background: transparent !important;
+    border: none !important;
+    color: #00ff00 !important;
+    font-family: 'Fira Code', monospace !important;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.p-terminal .p-terminal-command {
+    color: #00ff00 !important;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.p-terminal .p-terminal-prompt {
+    color: #00ff00 !important;
+    font-weight: bold;
+}
+
+.p-terminal .p-terminal-response {
+    color: #ffffff !important;
+    opacity: 0.9;
+    padding: 5px 0;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.p-terminal .p-terminal-response.loading {
+    color: #00ff00 !important;
+    opacity: 1;
+    animation: pulse 1.5s infinite;
+}
+
+/* Custom Scrollbar */
+.terminal-window::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-window::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.terminal-window::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 0, 0.3);
+    border-radius: 4px;
+}
+
+.terminal-window::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 0, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes glowBorder {
+    from { border-color: rgba(0, 255, 0, 0.5); }
+    to { border-color: #00ff00; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .terminal-window {
+        padding: 20px 15px;
+    }
+
+    .p-terminal {
+        height: calc(100vh - 180px);
+        font-size: 14px;
+    }
+} 

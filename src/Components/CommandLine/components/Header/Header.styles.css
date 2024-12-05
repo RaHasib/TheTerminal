@@ -1,0 +1,57 @@
+.terminal-header {
+    margin: 25px 0 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: rgba(0, 255, 0, 0.05);
+    border-left: 3px solid #00ff00;
+    animation: glowBorder 2s infinite alternate;
+}
+
+.terminal-header p {
+    margin: 5px 0;
+    line-height: 1.6;
+    color: #b4b4b4;
+}
+
+.terminal-header .commands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.terminal-header strong {
+    color: #00ff00;
+    font-weight: 600;
+    padding: 4px 8px;
+    margin: 0 2px;
+    border-radius: 4px;
+    background: rgba(0, 255, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.3s ease;
+}
+
+.terminal-header strong:hover {
+    background: rgba(0, 255, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .terminal-header {
+        margin: 20px 0 15px;
+        padding: 12px;
+    }
+
+    .terminal-header strong {
+        padding: 3px 6px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-header p {
+        font-size: 0.9em;
+    }
+} 

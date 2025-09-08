@@ -1,4 +1,4 @@
-# The Terminal 💻
+# The Terminal
 
 A modern, interactive terminal interface built with React and TypeScript, featuring a sleek design and various useful commands.
 
